@@ -1,0 +1,109 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2) ;
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: opacity var(--transition);
+}
+.logo:hover { opacity: 0.8; }
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+.navLink:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+.navLink.active {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+.navCta {
+  background: var(--accent) !important;
+  color: white !important;
+  font-weight: 600;
+}
+.navCta:hover {
+  background: #7c74ff !important;
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-1px);
+}
+.navCta.active {
+  background: var(--accent) !important;
+}
+
+.main {
+  flex: 1;
+  padding: 40px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .navLink span { display: none; }
+  .navLink { padding: 8px 12px; }
+  .navCta span { display: inline; }
+}

@@ -1,0 +1,107 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s ease both;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 60px);
+  font-weight: 200;
+  /* letter-spacing: -0.03em; */
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s ease 0.05s both;
+}
+
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  border: 1px solid var white;
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  height: 44px;
+  flex-shrink: 0;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3), inset 0px -2px 1px #ffffff;
+}
+.sortIcon { color: var(--bg); flex-shrink: 0; }
+.sortSelect {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--bg);
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  padding-right: 4px;
+}
+.sortSelect option { background: var(--bg-3); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.errorState {
+  text-align: center;
+  padding: 60px 24px;
+  color: #f87171;
+  font-size: 15px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+  flex-wrap: wrap;
+}
+
+.pageNumbers { display: flex; gap: 6px; }
+
+.pageBtn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.pageBtn:hover { border-color: var(--accent); color: var(--accent-2); }
+.pageBtnActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .sortWrap { width: 100%; }
+}

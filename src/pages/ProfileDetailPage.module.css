@@ -1,0 +1,279 @@
+.page { display: flex; flex-direction: column; gap: 28px; animation: fadeIn 0.4s ease; }
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  transition: color var(--transition);
+}
+.back:hover { color: var(--text-primary); }
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Hero */
+.hero {
+  background: var(--surface-large);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 10px #00000038, 0 0 0 1px rgba(108, 99, 255, 0.15);
+  animation: fadeUp 0.4s ease 0.05s both;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(108,99,255,0.07) 0%, rgba(240,98,146,0.04) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.heroContent {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.avatarWrap { flex-shrink: 0; }
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  box-shadow: 0 0 0 6px rgba(108,99,255,0.1);
+}
+
+.avatarPlaceholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  color: white;
+  box-shadow: 0 0 0 6px rgba(108,99,255,0.1);
+}
+
+.heroInfo { flex: 1; min-width: 0; }
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.jobTitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-2);
+  margin-bottom: 14px;
+}
+.dot { color: var(--text-muted-2); }
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.emailRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.emailIcon { color: var(--text-tertiary); flex-shrink: 0; }
+.email {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.email:hover { color: var(--accent-2); }
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color var(--transition);
+  padding: 2px;
+}
+.copyBtn:hover { color: var(--green); }
+
+/* Layout */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.main { display: flex; flex-direction: column; gap: 24px; }
+.sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 88px; }
+
+.section, .card {
+  background: var(--surface-large);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 10px #00000038, 0 0 0 1px rgba(108, 99, 255, 0.15);
+  animation: fadeUp 0.45s ease 0.1s both;
+
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted-2 );
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bio {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(108,99,255,0.12);
+  border: 1px solid rgba(108,99,255,0.25);
+  color: var(--accent-2);
+  font-size: 13px;
+  font-weight: 500;
+  animation: fadeUp 0.3s ease both;
+  transition: all var(--transition);
+}
+.skillBadge:hover {
+  background: rgba(108,99,255,0.2);
+  transform: translateY(-1px);
+}
+
+/* Links */
+.links { display: flex; flex-direction: column; gap: 2px; }
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background var(--transition);
+  text-decoration: none;
+}
+.linkRow:hover { background: var(--surface); }
+
+.linkIcon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-2);
+  flex-shrink: 0;
+}
+
+.linkLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  width: 56px;
+  flex-shrink: 0;
+}
+
+.linkValue {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.linkRow:hover .linkValue { color: var(--text-primary); }
+
+.linkExternal {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.linkRow:hover .linkExternal { opacity: 1; }
+
+@media (max-width: 900px) {
+  .columns { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .heroContent { flex-direction: column; align-items: center; text-align: center; }
+  .heroMeta { justify-content: center; }
+  .emailRow { align-self: center; }
+  .jobTitle { justify-content: center; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 24px 20px; }
+  .avatar, .avatarPlaceholder { width: 90px; height: 90px; font-size: 30px; }
+}

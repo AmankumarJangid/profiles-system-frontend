@@ -1,0 +1,45 @@
+.page { display: flex; flex-direction: column; gap: 32px; max-width: 1000px; margin: 0 auto; }
+
+.topBar { animation: fadeUp 0.3s ease both; }
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  transition: color var(--transition);
+}
+.back:hover { color: var(--text-primary); }
+
+.header { animation: fadeUp 0.35s ease 0.04s both; }
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 60px);
+  font-weight: 500;
+  /* letter-spacing: -0.03em; */
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.formWrap {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  animation: fadeUp 0.4s ease 0.08s both;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3), inset 0px -2px 1px #ffffff;
+}
+
+@media (max-width: 768px) {
+  .formWrap { padding: 24px 20px; }
+}

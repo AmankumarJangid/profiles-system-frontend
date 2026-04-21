@@ -1,0 +1,35 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  gap: 16px;
+  animation: fadeUp 0.4s ease;
+}
+.code {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 15vw, 140px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  background: linear-gradient(135deg, var(--accent), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  animation: float 4s ease-in-out infinite;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 380px;
+  margin-bottom: 8px;
+}
